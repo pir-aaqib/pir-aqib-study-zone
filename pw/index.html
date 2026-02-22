@@ -27,9 +27,10 @@ box-shadow:0 3px 8px rgba(0,0,0,0.1);}
 
 <div id="pdf-buttons">
 <script>
+// Generate 100 PW file buttons
 for (let i = 1; i <= 100; i++) {
-    let fileName = `pw-dpp-${i}.pdf`;
-    let btnText = `Download PW DPP ${i}`;
+    let fileName = `pw-${i}.pdf`;  // File names: pw-1.pdf, pw-2.pdf …
+    let btnText = `PW File ${i}`;
     document.write(`<a class="pdf-link" href="${fileName}">${btnText}</a>`);
 }
 </script>
