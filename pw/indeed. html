@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Folder Name - Pir Aaqib Study Zone</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {margin:0;font-family:Arial;background:#f4f6f9;text-align:center;}
+header {background:#0d47a1;color:white;padding:20px;}
+.pdf-link {
+display:block;margin:12px auto;padding:12px;width:260px;
+background:white;color:#0d47a1;text-decoration:none;
+border-radius:8px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+.pdf-link:hover {background:#1976d2;color:white;}
+.back-btn {display:inline-block;margin-top:20px;color:#0d47a1;text-decoration:none;font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Folder Name</h2>
+</header>
+
+<br>
+
+<!-- After uploading PDF, edit below link -->
+<a class="pdf-link" href="sample.pdf">Download File</a>
+
+<br>
+<a class="back-btn" href="../index.html">⬅ Back to Home</a>
+
+</body>
+</html>
