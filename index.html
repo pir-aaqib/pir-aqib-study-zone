@@ -27,11 +27,11 @@ font-size:40px;
 margin-bottom:10px;
 }
 
-/* Upgraded Sliding Banner CSS */
+/* Banner / Carousel CSS */
 .carousel {
     position: relative;
     overflow: hidden;
-    height: 450px;
+    height: 450px; /* matches your text-free banners */
     margin-bottom: 30px;
     border-radius: 15px;
 }
@@ -50,6 +50,7 @@ margin-bottom:10px;
     opacity: 1;
 }
 
+/* Optional overlay if you want later */
 .slide::after {
     content: '';
     position: absolute;
@@ -57,59 +58,13 @@ margin-bottom:10px;
     left:0;
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0); /* No overlay for clean banners */
     border-radius: 15px;
 }
 
+/* Remove overlay text entirely */
 .slide-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.slide-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 12px;
-}
-
-.slide-content p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
-
-.slide-content .btn {
-    background-color: #2563eb;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-.slide-content .btn:hover {
-    background-color: #1e40af;
-    transform: translateY(-2px);
-}
-
-/* Responsive */
-@media(max-width:768px){
-    .carousel { height: 350px; }
-    .slide-content h1 { font-size: 2rem; }
-    .slide-content p { font-size: 1rem; }
-    .slide-content .btn { padding: 10px 20px; font-size: 0.9rem; }
-}
-
-@media(max-width:480px){
-    .carousel { height: 280px; }
-    .slide-content h1 { font-size: 1.5rem; }
-    .slide-content p { font-size: 0.9rem; }
-    .slide-content .btn { padding: 8px 16px; font-size: 0.8rem; }
+    display: none;
 }
 
 /* Search Box */
@@ -207,29 +162,11 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <p>Free Study Materials for 11th, 12th, NEET & JEE</p>
 </header>
 
-<!-- Upgraded Sliding Banner -->
+<!-- Text-free Sliding Banner -->
 <div class="carousel">
-    <div class="slide active" style="background-image: url('banner1.jpg');">
-        <div class="slide-content">
-            <h1>Welcome to Pir Aaqib Study Zone</h1>
-            <p>Class 11, 12, NEET & JEE Notes at your fingertips</p>
-            <a href="#notesList" class="btn">Explore Notes</a>
-        </div>
-    </div>
-    <div class="slide" style="background-image: url('banner2.jpg');">
-        <div class="slide-content">
-            <h1>NEET Preparation Made Easy</h1>
-            <p>High-quality NEET Notes and PDFs</p>
-            <a href="#notesList" class="btn">View NEET Notes</a>
-        </div>
-    </div>
-    <div class="slide" style="background-image: url('banner3.jpg');">
-        <div class="slide-content">
-            <h1>JEE Notes & Resources</h1>
-            <p>All your JEE preparation materials in one place</p>
-            <a href="#notesList" class="btn">Explore JEE Notes</a>
-        </div>
-    </div>
+    <div class="slide active" style="background-image: url('banner1.jpg');"></div>
+    <div class="slide" style="background-image: url('banner2.jpg');"></div>
+    <div class="slide" style="background-image: url('banner3.jpg');"></div>
 </div>
 
 <div class="search-box">
