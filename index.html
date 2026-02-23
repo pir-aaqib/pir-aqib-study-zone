@@ -27,14 +27,13 @@ font-size:40px;
 margin-bottom:10px;
 }
 
-/* FIXED FULL-WIDTH BANNER */
+/* ✅ Banner / Carousel – clean full fit, no white space */
 .carousel {
     position: relative;
     overflow: hidden;
     height: 450px;
-    margin: 0 auto 30px auto;
-    width: 100%;
-    border-radius: 0;
+    margin-bottom: 30px;
+    border-radius: 15px;
 }
 
 .slide {
@@ -43,6 +42,7 @@ margin-bottom:10px;
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -51,54 +51,18 @@ margin-bottom:10px;
     opacity: 1;
 }
 
-.slide::after {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.45);
-    border-radius: 0;
+/* Mobile – no white space */
+@media (max-width: 768px) {
+    .carousel {
+        height: 260px;
+        border-radius: 12px;
+    }
+    .slide {
+        background-position: center top;
+    }
 }
 
-.slide-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.slide-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-}
-
-.slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.slide-content .btn {
-    background:#2563eb;
-    color:white;
-    padding:12px 25px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* Mobile perfect fit */
-@media(max-width:768px){
-    .carousel { height: 260px; }
-    .slide-content h1 { font-size: 1.5rem; }
-    .slide-content p { font-size: 0.9rem; }
-}
-
-/* Search */
+/* Search Box */
 .search-box{
 text-align:center;
 margin:20px;
@@ -112,7 +76,7 @@ border-radius:8px;
 border:none;
 }
 
-/* Cards */
+/* Notes Section */
 .section{
 background:white;
 color:black;
@@ -138,7 +102,9 @@ text-align:center;
 transition:0.3s;
 }
 
-.card:hover{ transform:translateY(-8px); }
+.card:hover{
+transform:translateY(-8px);
+}
 
 .btn{
 display:inline-block;
@@ -148,6 +114,13 @@ background:#2563eb;
 color:white;
 border-radius:6px;
 text-decoration:none;
+cursor:pointer;
+}
+
+.counter{
+margin-top:5px;
+font-size:14px;
+color:#555;
 }
 
 footer{
@@ -158,6 +131,7 @@ color:white;
 opacity:0.8;
 }
 
+/* WhatsApp Button */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -183,76 +157,98 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <p>Free Study Materials for 11th, 12th, NEET & JEE</p>
 </header>
 
+<!-- Sliding Banner -->
 <div class="carousel">
-    <div class="slide active" style="background-image: url('banner1.jpg');">
-        <div class="slide-content">
-            <h1>Welcome to Pir Aaqib Study Zone</h1>
-            <p>Class 11, 12, NEET & JEE Notes</p>
-            <a href="#notesList" class="btn">Explore Notes</a>
-        </div>
-    </div>
-
-    <div class="slide" style="background-image: url('banner2.jpg');">
-        <div class="slide-content">
-            <h1>NEET Preparation Made Easy</h1>
-            <p>High Quality NEET PDFs</p>
-            <a href="#notesList" class="btn">View NEET</a>
-        </div>
-    </div>
-
-    <div class="slide" style="background-image: url('banner3.jpg');">
-        <div class="slide-content">
-            <h1>JEE Notes & Resources</h1>
-            <p>All JEE Materials in One Place</p>
-            <a href="#notesList" class="btn">Explore JEE</a>
-        </div>
-    </div>
+    <div class="slide active" style="background-image: url('banner1.jpg');"></div>
+    <div class="slide" style="background-image: url('banner2.jpg');"></div>
+    <div class="slide" style="background-image: url('banner3.jpg');"></div>
 </div>
 
 <div class="search-box">
 <input type="text" id="search" placeholder="Search notes..." onkeyup="searchNotes()">
 </div>
 
+<!-- AdSense -->
+<div style="text-align:center; margin:20px;">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
 <div class="section">
 <div class="container" id="notesList">
 
 <div class="card">
-<h3>Equilibrium DPP 08 – Lec 12</h3>
-<a href="#" class="btn">Download PDF</a>
+<h3>Equilibrium DPP 08 – Lec 12 (Arjuna NEET 2026)</h3>
+<a href="equilibrium-dpp-08-lec-12-arjuna-neet-2026.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
+<div class="counter">Downloads: <span>0</span></div>
 </div>
 
 <div class="card">
-<h3>Yakeen Legends Test 1</h3>
-<a href="#" class="btn">Download PDF</a>
+<h3>Yakeen Legends Practice Test 1</h3>
+<a href="Yakeen-lagends-practice-test-1.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
+<div class="counter">Downloads: <span>0</span></div>
+</div>
+
+<div class="card">
+<h3>Yakeen Legends Practice Test 1 Solutions</h3>
+<a href="practice-test1-solutions.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
+<div class="counter">Downloads: <span>0</span></div>
 </div>
 
 </div>
 </div>
 
 <footer>
-© 2026 Pir Aaqib Study Zone
+© 2026 Pir Aaqib Study Zone |
+<a href="about.html" style="color:white;">About</a> |
+<a href="contact.html" style="color:white;">Contact</a> |
+<a href="privacy.html" style="color:white;">Privacy Policy</a>
 </footer>
 
-<a href="https://wa.me/919596027454" class="whatsapp">💬</a>
+<a href="https://wa.me/919596027454" class="whatsapp" target="_blank">💬</a>
 
 <script>
+function searchNotes() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+
+function countDownload(link){
+  let counter = link.parentElement.querySelector("span");
+  let count = parseInt(localStorage.getItem(link.href)) || 0;
+  count++;
+  localStorage.setItem(link.href, count);
+  counter.innerText = count;
+}
+
+// Slider
 let slides = document.querySelectorAll('.slide');
 let current = 0;
 
 function showSlide(index){
-  slides.forEach((s,i)=>s.classList.toggle('active', i===index));
+  slides.forEach((slide,i)=> {
+    slide.classList.remove('active');
+    if(i===index) slide.classList.add('active');
+  });
 }
-setInterval(()=>{
+
+function nextSlide(){
   current = (current + 1) % slides.length;
   showSlide(current);
-}, 4000);
-
-function searchNotes(){
- let val=document.getElementById("search").value.toLowerCase();
- document.querySelectorAll(".card").forEach(card=>{
-  card.style.display = card.innerText.toLowerCase().includes(val) ? "block":"none";
- });
 }
+
+setInterval(nextSlide, 4000);
 </script>
 
 </body>
