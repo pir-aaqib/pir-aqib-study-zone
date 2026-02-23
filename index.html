@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pir Aaqib Study Zone</title>
 
-<!-- Preload banners for faster load -->
-<link rel="preload" as="image" href="banner1.jpg">
-<link rel="preload" as="image" href="banner2.jpg">
-<link rel="preload" as="image" href="banner3.jpg">
-
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
      crossorigin="anonymous"></script>
@@ -32,13 +27,14 @@ font-size:40px;
 margin-bottom:10px;
 }
 
-/* Banner */
+/* FIXED FULL-WIDTH BANNER */
 .carousel {
     position: relative;
     overflow: hidden;
     height: 450px;
-    margin-bottom: 10px;
-    border-radius: 15px;
+    margin: 0 auto 30px auto;
+    width: 100%;
+    border-radius: 0;
 }
 
 .slide {
@@ -47,62 +43,135 @@ margin-bottom:10px;
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.slide.active { opacity: 1; }
-
-/* Mobile */
-@media (max-width: 768px) {
-    .carousel { height: 260px; border-radius: 12px; }
-    .slide { background-position: center top; }
+.slide.active {
+    opacity: 1;
 }
 
-/* Dots */
-.dots{ text-align:center; margin-bottom:20px; }
-.dot{
-  display:inline-block;
-  width:10px;height:10px;margin:5px;
-  background:#94a3b8;border-radius:50%;cursor:pointer;transition:.3s;
+.slide::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.45);
+    border-radius: 0;
 }
-.dot.active{ background:#fff; }
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.slide-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.slide-content .btn {
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Mobile perfect fit */
+@media(max-width:768px){
+    .carousel { height: 260px; }
+    .slide-content h1 { font-size: 1.5rem; }
+    .slide-content p { font-size: 0.9rem; }
+}
 
 /* Search */
-.search-box{ text-align:center; margin:20px; }
+.search-box{
+text-align:center;
+margin:20px;
+}
+
 .search-box input{
-padding:10px;width:90%;max-width:400px;border-radius:8px;border:none;
+padding:10px;
+width:90%;
+max-width:400px;
+border-radius:8px;
+border:none;
 }
 
-/* Notes */
+/* Cards */
 .section{
-background:white;color:black;padding:40px 20px;
-border-radius:30px 30px 0 0;margin-top:40px;
+background:white;
+color:black;
+padding:40px 20px;
+border-radius:30px 30px 0 0;
+margin-top:40px;
 }
+
 .container{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;max-width:1000px;margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
 }
+
 .card{
-background:#f1f5f9;padding:25px;border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);text-align:center;transition:.3s;
+background:#f1f5f9;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
 }
+
 .card:hover{ transform:translateY(-8px); }
+
 .btn{
-display:inline-block;padding:8px 15px;margin-top:10px;
-background:#2563eb;color:white;border-radius:6px;text-decoration:none;
+display:inline-block;
+padding:8px 15px;
+margin-top:10px;
+background:#2563eb;
+color:white;
+border-radius:6px;
+text-decoration:none;
 }
-.counter{ margin-top:5px;font-size:14px;color:#555; }
 
-/* Footer */
-footer{ text-align:center;padding:20px;font-size:14px;color:white;opacity:.8; }
+footer{
+text-align:center;
+padding:20px;
+font-size:14px;
+color:white;
+opacity:0.8;
+}
 
-/* WhatsApp */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;background:#25d366;color:white;
-width:55px;height:55px;border-radius:50%;text-align:center;line-height:55px;
-font-size:28px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.3);
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+width:55px;
+height:55px;
+border-radius:50%;
+text-align:center;
+line-height:55px;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -115,76 +184,75 @@ font-size:28px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.3);
 </header>
 
 <div class="carousel">
-  <div class="slide active" style="background-image:url('banner1.jpg')"></div>
-  <div class="slide" style="background-image:url('banner2.jpg')"></div>
-  <div class="slide" style="background-image:url('banner3.jpg')"></div>
-</div>
+    <div class="slide active" style="background-image: url('banner1.jpg');">
+        <div class="slide-content">
+            <h1>Welcome to Pir Aaqib Study Zone</h1>
+            <p>Class 11, 12, NEET & JEE Notes</p>
+            <a href="#notesList" class="btn">Explore Notes</a>
+        </div>
+    </div>
 
-<div class="dots">
-  <span class="dot active" onclick="goToSlide(0)"></span>
-  <span class="dot" onclick="goToSlide(1)"></span>
-  <span class="dot" onclick="goToSlide(2)"></span>
+    <div class="slide" style="background-image: url('banner2.jpg');">
+        <div class="slide-content">
+            <h1>NEET Preparation Made Easy</h1>
+            <p>High Quality NEET PDFs</p>
+            <a href="#notesList" class="btn">View NEET</a>
+        </div>
+    </div>
+
+    <div class="slide" style="background-image: url('banner3.jpg');">
+        <div class="slide-content">
+            <h1>JEE Notes & Resources</h1>
+            <p>All JEE Materials in One Place</p>
+            <a href="#notesList" class="btn">Explore JEE</a>
+        </div>
+    </div>
 </div>
 
 <div class="search-box">
 <input type="text" id="search" placeholder="Search notes..." onkeyup="searchNotes()">
 </div>
 
-<!-- AdSense -->
-<div style="text-align:center; margin:20px;">
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
 <div class="section">
 <div class="container" id="notesList">
-  <!-- your cards here -->
+
+<div class="card">
+<h3>Equilibrium DPP 08 – Lec 12</h3>
+<a href="#" class="btn">Download PDF</a>
+</div>
+
+<div class="card">
+<h3>Yakeen Legends Test 1</h3>
+<a href="#" class="btn">Download PDF</a>
+</div>
+
 </div>
 </div>
 
 <footer>
-© 2026 Pir Aaqib Study Zone |
-<a href="about.html" style="color:white;">About</a> |
-<a href="contact.html" style="color:white;">Contact</a> |
-<a href="privacy.html" style="color:white;">Privacy Policy</a>
+© 2026 Pir Aaqib Study Zone
 </footer>
 
-<a href="https://wa.me/919596027454" class="whatsapp" target="_blank">💬</a>
+<a href="https://wa.me/919596027454" class="whatsapp">💬</a>
 
 <script>
-function searchNotes(){
-  let input=document.getElementById("search").value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card=>{
-    card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
-  });
-}
-let slides=document.querySelectorAll('.slide');
-let dots=document.querySelectorAll('.dot');
-let current=0;
-function showSlide(i){
-  slides.forEach((s,idx)=>{
-    s.classList.toggle('active', idx===i);
-    dots[idx].classList.toggle('active', idx===i);
-  });
-}
-function nextSlide(){ current=(current+1)%slides.length; showSlide(current); }
-function goToSlide(i){ current=i; showSlide(current); }
-setInterval(nextSlide, 4000);
+let slides = document.querySelectorAll('.slide');
+let current = 0;
 
-// Swipe
-let startX=0;
-const carousel=document.querySelector('.carousel');
-carousel.addEventListener('touchstart',e=> startX=e.touches[0].clientX);
-carousel.addEventListener('touchend',e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(startX-endX>50) nextSlide();
-  if(endX-startX>50){ current=(current-1+slides.length)%slides.length; showSlide(current); }
-});
+function showSlide(index){
+  slides.forEach((s,i)=>s.classList.toggle('active', i===index));
+}
+setInterval(()=>{
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}, 4000);
+
+function searchNotes(){
+ let val=document.getElementById("search").value.toLowerCase();
+ document.querySelectorAll(".card").forEach(card=>{
+  card.style.display = card.innerText.toLowerCase().includes(val) ? "block":"none";
+ });
+}
 </script>
 
 </body>
