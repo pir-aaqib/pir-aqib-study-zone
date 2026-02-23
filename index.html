@@ -1,322 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pir Aaqib Study Zone</title>
+<title>Pir Aaqib Study Zone – Free NEET & JEE Notes</title>
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<meta name="description" content="Free NEET & JEE Notes, DPPs and PDFs for Class 11 and 12. Pir Aaqib Study Zone – updated daily.">
+<meta name="keywords" content="NEET notes, JEE notes, Class 11 notes, Class 12 notes, free PDFs">
+<meta name="author" content="Pir Aaqib">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+:root{--bg:#0f172a;--card:rgba(255,255,255,.75);--text:#fff;--section:#fff;}
+.light{--bg:#f8fafc;--card:#fff;--text:#000;--section:#f1f5f9;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:var(--text);transition:.3s;}
+header{position:sticky;top:0;z-index:99;text-align:center;padding:20px;background:rgba(15,23,42,.7);backdrop-filter:blur(10px);}
+.toggle{position:absolute;right:15px;top:15px;background:#2563eb;color:#fff;border-radius:20px;padding:6px 12px;font-size:13px;cursor:pointer;}
 
-body{
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-color:white;
-}
+.carousel{height:360px;border-radius:20px;overflow:hidden;margin:25px;position:relative;}
+.slide{position:absolute;width:100%;height:360px;background-size:cover;background-position:center;opacity:0;transition:1s;}
+.slide.active{opacity:1;}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.8));}
+.slide-content{position:relative;z-index:1;text-align:center;top:50%;transform:translateY(-50%);animation:fadeUp 1s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(-50%)}}
 
-header{
-text-align:center;
-padding:50px 20px;
-}
+.controls{text-align:center;margin:20px;}
+.controls input{padding:10px;border-radius:8px;border:none;width:90%;max-width:380px;}
+.controls .btn{margin:5px;}
 
-header h1{
-font-size:40px;
-margin-bottom:10px;
-}
+.section{background:var(--section);color:#000;border-radius:30px 30px 0 0;padding:40px 20px;}
+.container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1000px;margin:auto;}
 
-/* Upgraded Sliding Banner CSS */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    height: 450px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-}
+.card{background:var(--card);backdrop-filter:blur(10px);padding:25px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.2);transition:.3s;text-align:center;}
+.card:hover{transform:translateY(-10px) scale(1.03);}
+.btn{display:inline-block;padding:10px 18px;background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;border-radius:8px;text-decoration:none;margin:6px;box-shadow:0 5px 15px rgba(37,99,235,.5);cursor:pointer;}
 
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.slide::after {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.45);
-    border-radius: 15px;
-}
-
-.slide-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.slide-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 12px;
-}
-
-.slide-content p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
-
-.slide-content .btn {
-    background-color: #2563eb;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-.slide-content .btn:hover {
-    background-color: #1e40af;
-    transform: translateY(-2px);
-}
-
-/* Responsive */
-@media(max-width:768px){
-    .carousel { height: 350px; }
-    .slide-content h1 { font-size: 2rem; }
-    .slide-content p { font-size: 1rem; }
-    .slide-content .btn { padding: 10px 20px; font-size: 0.9rem; }
-}
-
-@media(max-width:480px){
-    .carousel { height: 280px; }
-    .slide-content h1 { font-size: 1.5rem; }
-    .slide-content p { font-size: 0.9rem; }
-    .slide-content .btn { padding: 8px 16px; font-size: 0.8rem; }
-}
-
-/* Search Box */
-.search-box{
-text-align:center;
-margin:20px;
-}
-
-.search-box input{
-padding:10px;
-width:90%;
-max-width:400px;
-border-radius:8px;
-border:none;
-}
-
-/* Notes Section */
-.section{
-background:white;
-color:black;
-padding:40px 20px;
-border-radius:30px 30px 0 0;
-margin-top:40px;
-}
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:#f1f5f9;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.btn{
-display:inline-block;
-padding:8px 15px;
-margin-top:10px;
-background:#2563eb;
-color:white;
-border-radius:6px;
-text-decoration:none;
-cursor:pointer;
-}
-
-.counter{
-margin-top:5px;
-font-size:14px;
-color:#555;
-}
-
-footer{
-text-align:center;
-padding:20px;
-font-size:14px;
-color:white;
-opacity:0.8;
-}
-
-/* WhatsApp Button */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-width:55px;
-height:55px;
-border-radius:50%;
-text-align:center;
-line-height:55px;
-font-size:28px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,.4);}
+footer{text-align:center;padding:20px;opacity:.8;}
 </style>
 </head>
 
 <body>
 
+<!-- Login -->
+<div id="loginModal" style="position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#fff;padding:25px;border-radius:12px;max-width:320px;width:90%;text-align:center;">
+    <h3>Login to Continue</h3>
+    <input id="email" type="email" placeholder="Email" style="width:100%;padding:10px;margin:10px 0;">
+    <input id="pass" type="password" placeholder="Password" style="width:100%;padding:10px;margin:10px 0;">
+    <a class="btn" onclick="login()">Login</a>
+  </div>
+</div>
+
 <header>
-<h1>Pir Aaqib Study Zone</h1>
-<p>Free Study Materials for 11th, 12th, NEET & JEE</p>
+  <h1>Pir Aaqib Study Zone</h1>
+  <p>Trusted by 5,000+ Students | Free PDFs | Updated Weekly</p>
+  <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
 </header>
 
-<!-- Upgraded Sliding Banner -->
 <div class="carousel">
-    <div class="slide active" style="background-image: url('banner1.jpg');">
-        <div class="slide-content">
-            <h1>Welcome to Pir Aaqib Study Zone</h1>
-            <p>Class 11, 12, NEET & JEE Notes at your fingertips</p>
-            <a href="#notesList" class="btn">Explore Notes</a>
-        </div>
-    </div>
-    <div class="slide" style="background-image: url('banner2.jpg');">
-        <div class="slide-content">
-            <h1>NEET Preparation Made Easy</h1>
-            <p>High-quality NEET Notes and PDFs</p>
-            <a href="#notesList" class="btn">View NEET Notes</a>
-        </div>
-    </div>
-    <div class="slide" style="background-image: url('banner3.jpg');">
-        <div class="slide-content">
-            <h1>JEE Notes & Resources</h1>
-            <p>All your JEE preparation materials in one place</p>
-            <a href="#notesList" class="btn">Explore JEE Notes</a>
-        </div>
-    </div>
+  <div class="slide active" style="background-image:url('banner1.webp')">
+    <div class="slide-content"><h1>NEET & JEE Premium Notes</h1><p>Everything you need in one place</p></div>
+  </div>
+  <div class="slide" style="background-image:url('banner2.webp')"></div>
+  <div class="slide" style="background-image:url('banner3.webp')"></div>
 </div>
 
-<div class="search-box">
-<input type="text" id="search" placeholder="Search notes..." onkeyup="searchNotes()">
-</div>
-
-<!-- AdSense Ad Below Search -->
-<div style="text-align:center; margin:20px;">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-     data-ad-slot="1234567890"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="controls">
+  <input id="search" type="text" placeholder="Search notes...">
+  <div>
+    <span class="btn filter" data-cat="all">All</span>
+    <span class="btn filter" data-cat="neet">NEET</span>
+    <span class="btn filter" data-cat="jee">JEE</span>
+    <span class="btn filter" data-cat="11">Class 11</span>
+    <span class="btn filter" data-cat="12">Class 12</span>
+    <span class="btn" onclick="sortByDownloads()">🔥 Most Downloaded</span>
+  </div>
 </div>
 
 <div class="section">
-<div class="container" id="notesList">
+  <div class="container">
 
-<div class="card">
-<h3>Equilibrium DPP 08 – Lec 12 (Arjuna NEET 2026)</h3>
-<a href="equilibrium-dpp-08-lec-12-arjuna-neet-2026.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
+    <div class="card popular" data-cat="neet 12 chemistry">
+      <h3>Equilibrium DPP 08 – Lec 12 (NEET)</h3>
+      <a class="btn" onclick="previewPDF('equilibrium-dpp-08-lec-12-arjuna-neet-2026.pdf')">Preview</a>
+      <a class="btn" href="equilibrium-dpp-08-lec-12-arjuna-neet-2026.pdf" onclick="return lockDownload(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+
+    <div class="card" data-cat="neet 12 physics">
+      <h3>Practice Test 1 – NEET</h3>
+      <a class="btn" onclick="previewPDF('Yakeen-lagends-practice-test-1.pdf')">Preview</a>
+      <a class="btn" href="Yakeen-lagends-practice-test-1.pdf" onclick="return lockDownload(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-<h3>Yakeen Legends Practice Test 1</h3>
-<a href="Yakeen-lagends-practice-test-1.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
+<div style="background:rgba(255,255,255,.9);padding:25px;margin:40px 20px;border-radius:18px;text-align:center;max-width:700px;margin-inline:auto;">
+  <h3>Get Free Notes & Updates</h3>
+  <p style="opacity:.7">We’ll send important PDFs & tests. No spam.</p>
+  <input id="subEmail" type="email" placeholder="Enter your email" style="padding:10px;width:70%;max-width:280px;border-radius:8px;border:1px solid #ddd;">
+  <a class="btn" onclick="subscribe()">Subscribe</a>
 </div>
 
-<div class="card">
-<h3>Yakeen Legends Practice Test 1 Solutions</h3>
-<a href="practice-test1-solutions.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
+<footer>© 2026 Pir Aaqib Study Zone | About | Contact | Privacy</footer>
+<a href="https://wa.me/919596027454" class="whatsapp">💬</a>
+
+<!-- Preview Modal -->
+<div id="previewModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;">
+  <div style="background:#fff;width:95%;max-width:900px;margin:5% auto;padding:10px;border-radius:12px;">
+    <iframe id="pdfFrame" src="" style="width:100%;height:70vh;border:none;"></iframe>
+    <div style="text-align:right;margin-top:10px;">
+      <a class="btn" onclick="closePreview()">Close</a>
+    </div>
+  </div>
 </div>
-
-</div> <!-- end container -->
-</div> <!-- end section -->
-
-<footer>
-© 2026 Pir Aaqib Study Zone |
-<a href="about.html" style="color:white;">About</a> |
-<a href="contact.html" style="color:white;">Contact</a> |
-<a href="privacy.html" style="color:white;">Privacy Policy</a>
-</footer>
-
-<a href="https://wa.me/919596027454" class="whatsapp" target="_blank">💬</a>
 
 <script>
-function searchNotes() {
-let input = document.getElementById("search").value.toLowerCase();
-let cards = document.querySelectorAll(".card");
-cards.forEach(card => {
-let text = card.innerText.toLowerCase();
-card.style.display = text.includes(input) ? "block" : "none";
+if(localStorage.getItem("loggedIn")==="1"){document.getElementById("loginModal").style.display="none";}
+function login(){localStorage.setItem("loggedIn","1");document.getElementById("loginModal").style.display="none";}
+
+let slides=document.querySelectorAll('.slide'),i=0;
+setInterval(()=>{slides.forEach(s=>s.classList.remove('active'));i=(i+1)%slides.length;slides[i].classList.add('active');},4000);
+
+function toggleMode(){document.body.classList.toggle('light');}
+
+function previewPDF(src){
+  document.getElementById("previewModal").style.display="block";
+  document.getElementById("pdfFrame").src = src;
+}
+function closePreview(){
+  document.getElementById("previewModal").style.display="none";
+  document.getElementById("pdfFrame").src="";
+}
+
+function lockDownload(link){
+  if(!localStorage.getItem("joined")){
+    if(confirm("Join our WhatsApp / Telegram to unlock downloads")){
+      window.open("https://wa.me/919596027454","_blank");
+      window.open("https://t.me/PirAaqibStudyZone","_blank");
+      localStorage.setItem("joined","1");
+    }
+    return false;
+  }
+  let count=parseInt(localStorage.getItem(link)||0)+1;
+  localStorage.setItem(link,count);
+  event.target.parentElement.querySelector(".counter span").innerText=count;
+  return true;
+}
+
+// Load counters
+document.querySelectorAll(".card").forEach(card=>{
+  let link=card.querySelector("a[href]");
+  let span=card.querySelector(".counter span");
+  let count=localStorage.getItem(link?.href)||0;
+  if(span) span.innerText=count;
 });
-}
 
-function countDownload(link){
-let counter = link.parentElement.querySelector("span");
-let count = parseInt(localStorage.getItem(link.href)) || 0;
-count++;
-localStorage.setItem(link.href, count);
-counter.innerText = count;
-}
+// Search
+document.getElementById("search").addEventListener("keyup", function(){
+  let val=this.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(val) ? "block" : "none";
+  });
+});
 
-// Sliding Banner JS
-let slides = document.querySelectorAll('.slide');
-let current = 0;
-
-function showSlide(index){
-    slides.forEach((slide,i)=> {
-        slide.classList.remove('active');
-        if(i===index) slide.classList.add('active');
+// Filters
+document.querySelectorAll(".filter").forEach(btn=>{
+  btn.onclick=()=>{
+    let cat=btn.dataset.cat;
+    document.querySelectorAll(".card").forEach(card=>{
+      card.style.display = (cat==="all" || card.dataset.cat.includes(cat)) ? "block" : "none";
     });
+  };
+});
+
+// Sort by downloads
+function sortByDownloads(){
+  const container=document.querySelector(".container");
+  const cards=[...container.children];
+  cards.sort((a,b)=>{
+    const al=a.querySelector("a[href]")?.href;
+    const bl=b.querySelector("a[href]")?.href;
+    return (parseInt(localStorage.getItem(bl)||0))-(parseInt(localStorage.getItem(al)||0));
+  });
+  cards.forEach(c=>container.appendChild(c));
 }
 
-function nextSlide(){
-    current = (current + 1) % slides.length;
-    showSlide(current);
+// Subscribe
+function subscribe(){
+  const email=document.getElementById("subEmail").value;
+  if(!email || !email.includes("@")) return alert("Enter a valid email");
+  let list=JSON.parse(localStorage.getItem("subs")||"[]");
+  list.push({email,time:new Date().toISOString()});
+  localStorage.setItem("subs",JSON.stringify(list));
+  alert("Subscribed successfully!");
+  document.getElementById("subEmail").value="";
 }
-
-setInterval(nextSlide, 4000); // Change slide every 4 seconds
 </script>
 
 </body>
