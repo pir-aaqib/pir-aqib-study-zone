@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pir Aaqib Study Zone</title>
 
+<!-- Preload banners for faster load -->
+<link rel="preload" as="image" href="banner1.jpg">
+<link rel="preload" as="image" href="banner2.jpg">
+<link rel="preload" as="image" href="banner3.jpg">
+
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
      crossorigin="anonymous"></script>
@@ -27,12 +32,12 @@ font-size:40px;
 margin-bottom:10px;
 }
 
-/* Banner / Carousel CSS */
+/* Banner */
 .carousel {
     position: relative;
     overflow: hidden;
     height: 450px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 15px;
 }
 
@@ -40,135 +45,64 @@ margin-bottom:10px;
     position: absolute;
     width: 100%;
     height: 100%;
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.slide.active {
-    opacity: 1;
-}
+.slide.active { opacity: 1; }
 
-.slide::after {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0);
-    border-radius: 15px;
-}
-
-.slide-content {
-    display: none;
-}
-
-/* ✅ Responsive Banner Fix */
+/* Mobile */
 @media (max-width: 768px) {
-  .carousel {
-    height: 220px;
-    border-radius: 12px;
-  }
-
-  .slide {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+    .carousel { height: 260px; border-radius: 12px; }
+    .slide { background-position: center top; }
 }
 
-@media (min-width: 769px) {
-  .slide {
-    background-size: cover;
-    background-position: center;
-  }
+/* Dots */
+.dots{ text-align:center; margin-bottom:20px; }
+.dot{
+  display:inline-block;
+  width:10px;height:10px;margin:5px;
+  background:#94a3b8;border-radius:50%;cursor:pointer;transition:.3s;
 }
+.dot.active{ background:#fff; }
 
-/* Search Box */
-.search-box{
-text-align:center;
-margin:20px;
-}
-
+/* Search */
+.search-box{ text-align:center; margin:20px; }
 .search-box input{
-padding:10px;
-width:90%;
-max-width:400px;
-border-radius:8px;
-border:none;
+padding:10px;width:90%;max-width:400px;border-radius:8px;border:none;
 }
 
-/* Notes Section */
+/* Notes */
 .section{
-background:white;
-color:black;
-padding:40px 20px;
-border-radius:30px 30px 0 0;
-margin-top:40px;
+background:white;color:black;padding:40px 20px;
+border-radius:30px 30px 0 0;margin-top:40px;
 }
-
 .container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;max-width:1000px;margin:auto;
 }
-
 .card{
-background:#f1f5f9;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-text-align:center;
-transition:0.3s;
+background:#f1f5f9;padding:25px;border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);text-align:center;transition:.3s;
 }
-
-.card:hover{
-transform:translateY(-8px);
-}
-
+.card:hover{ transform:translateY(-8px); }
 .btn{
-display:inline-block;
-padding:8px 15px;
-margin-top:10px;
-background:#2563eb;
-color:white;
-border-radius:6px;
-text-decoration:none;
-cursor:pointer;
+display:inline-block;padding:8px 15px;margin-top:10px;
+background:#2563eb;color:white;border-radius:6px;text-decoration:none;
 }
+.counter{ margin-top:5px;font-size:14px;color:#555; }
 
-.counter{
-margin-top:5px;
-font-size:14px;
-color:#555;
-}
+/* Footer */
+footer{ text-align:center;padding:20px;font-size:14px;color:white;opacity:.8; }
 
-footer{
-text-align:center;
-padding:20px;
-font-size:14px;
-color:white;
-opacity:0.8;
-}
-
-/* WhatsApp Button */
+/* WhatsApp */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-width:55px;
-height:55px;
-border-radius:50%;
-text-align:center;
-line-height:55px;
-font-size:28px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+position:fixed;bottom:20px;right:20px;background:#25d366;color:white;
+width:55px;height:55px;border-radius:50%;text-align:center;line-height:55px;
+font-size:28px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 </style>
 </head>
@@ -180,51 +114,36 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <p>Free Study Materials for 11th, 12th, NEET & JEE</p>
 </header>
 
-<!-- Text-free Sliding Banner -->
 <div class="carousel">
-    <div class="slide active" style="background-image: url('banner1.jpg');"></div>
-    <div class="slide" style="background-image: url('banner2.jpg');"></div>
-    <div class="slide" style="background-image: url('banner3.jpg');"></div>
+  <div class="slide active" style="background-image:url('banner1.jpg')"></div>
+  <div class="slide" style="background-image:url('banner2.jpg')"></div>
+  <div class="slide" style="background-image:url('banner3.jpg')"></div>
+</div>
+
+<div class="dots">
+  <span class="dot active" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
 </div>
 
 <div class="search-box">
 <input type="text" id="search" placeholder="Search notes..." onkeyup="searchNotes()">
 </div>
 
-<!-- AdSense Ad Below Search -->
+<!-- AdSense -->
 <div style="text-align:center; margin:20px;">
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-     data-ad-slot="1234567890"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+style="display:block"
+data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+data-ad-slot="1234567890"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
 <div class="section">
 <div class="container" id="notesList">
-
-<div class="card">
-<h3>Equilibrium DPP 08 – Lec 12 (Arjuna NEET 2026)</h3>
-<a href="equilibrium-dpp-08-lec-12-arjuna-neet-2026.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
-</div>
-
-<div class="card">
-<h3>Yakeen Legends Practice Test 1</h3>
-<a href="Yakeen-lagends-practice-test-1.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
-</div>
-
-<div class="card">
-<h3>Yakeen Legends Practice Test 1 Solutions</h3>
-<a href="practice-test1-solutions.pdf" class="btn" download onclick="countDownload(this)">Download PDF</a>
-<div class="counter">Downloads: <span>0</span></div>
-</div>
-
+  <!-- your cards here -->
 </div>
 </div>
 
@@ -238,39 +157,34 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <a href="https://wa.me/919596027454" class="whatsapp" target="_blank">💬</a>
 
 <script>
-function searchNotes() {
-let input = document.getElementById("search").value.toLowerCase();
-let cards = document.querySelectorAll(".card");
-cards.forEach(card => {
-let text = card.innerText.toLowerCase();
-card.style.display = text.includes(input) ? "block" : "none";
-});
+function searchNotes(){
+  let input=document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
+  });
 }
-
-function countDownload(link){
-let counter = link.parentElement.querySelector("span");
-let count = parseInt(localStorage.getItem(link.href)) || 0;
-count++;
-localStorage.setItem(link.href, count);
-counter.innerText = count;
+let slides=document.querySelectorAll('.slide');
+let dots=document.querySelectorAll('.dot');
+let current=0;
+function showSlide(i){
+  slides.forEach((s,idx)=>{
+    s.classList.toggle('active', idx===i);
+    dots[idx].classList.toggle('active', idx===i);
+  });
 }
-
-let slides = document.querySelectorAll('.slide');
-let current = 0;
-
-function showSlide(index){
-    slides.forEach((slide,i)=> {
-        slide.classList.remove('active');
-        if(i===index) slide.classList.add('active');
-    });
-}
-
-function nextSlide(){
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}
-
+function nextSlide(){ current=(current+1)%slides.length; showSlide(current); }
+function goToSlide(i){ current=i; showSlide(current); }
 setInterval(nextSlide, 4000);
+
+// Swipe
+let startX=0;
+const carousel=document.querySelector('.carousel');
+carousel.addEventListener('touchstart',e=> startX=e.touches[0].clientX);
+carousel.addEventListener('touchend',e=>{
+  let endX=e.changedTouches[0].clientX;
+  if(startX-endX>50) nextSlide();
+  if(endX-startX>50){ current=(current-1+slides.length)%slides.length; showSlide(current); }
+});
 </script>
 
 </body>
