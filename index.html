@@ -130,7 +130,7 @@ header{
   cursor:pointer;
 }
 
-/* WhatsApp floating button */
+/* WhatsApp */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -169,66 +169,38 @@ footer a:hover {
   color: #2563eb;
 }
 
-/* Privacy Section */
-.section-privacy {
-  padding: 30px 15px;
-  border-radius: 15px 15px 0 0;
-  margin-top: 15px;
+/* Compact Contact & Privacy Sections */
+.section-contact, .section-privacy {
+  padding: 12px 10px; /* smaller padding */
+  border-radius: 12px 12px 0 0;
+  margin-top: 10px;
   color: #fff;
   text-align: center;
-  backdrop-filter: blur(8px);
-  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem; /* smaller text */
 }
 
-.section-privacy h2 {
-  font-size: 1.5rem;
+.section-contact h2, .section-privacy h2 {
+  font-size: 1.2rem; /* smaller heading */
   margin-bottom: 5px;
   font-weight:600;
 }
 
-.section-privacy p {
-  margin:0;
-  line-height:1.4;
-  font-size: 1rem;
-}
-
-/* Contact Section */
-.section-contact {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.section-contact h2 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  font-weight:600;
-  color: #fff;
-}
-
-.contact-lines {
-  display: inline-block;          
-  padding: 10px 15px;              
-  border-radius: 15px 15px 0 0;
-  backdrop-filter: blur(8px);
-  background: linear-gradient(135deg, #0f172a, #1e40af);
-}
-
-.contact-lines p {
-  margin:0;
+.section-contact p, .section-privacy p {
+  font-size: 0.9rem; /* smaller paragraph text */
   line-height:1.2;
-  font-size: 1rem;
-  color: #fff;
-  word-wrap: break-word;
+  max-width:500px;
+  margin:3px auto;
 }
 
-.contact-lines a {
-  color:#2563eb; 
-  text-decoration:underline; 
-  transition: color 0.3s; 
+.section-contact a, .section-privacy a {
+  color:#2563eb;
+  text-decoration:underline;
+  transition: color 0.3s;
 }
 
-.contact-lines a:hover {
-  color:#93c5fd;
+.section-contact a:hover, .section-privacy a:hover { 
+  color:#93c5fd; 
 }
 
 /* Responsive */
@@ -275,7 +247,40 @@ footer a:hover {
 <!-- PDFs Section -->
 <div class="section">
   <div class="container">   
-    <!-- Cards here (your existing PDFs) -->
+    <div class="card" data-cat="neet physics">
+      <h3>Practice Test 1 – NEET</h3>
+      <a class="btn" onclick="previewPDF('Yakeen-lagends-practice-test-1.pdf')">Preview</a>
+      <a class="btn" href="Yakeen-lagends-practice-test-1.pdf" onclick="return requireJoin(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+
+    <div class="card" data-cat="neet physics solution">
+      <h3>Practice Test 1 – NEET (Solution & Hint)</h3>
+      <a class="btn" onclick="previewPDF('Yakeen-lagends-practice-test-1-solution.pdf')">Preview</a>
+      <a class="btn" href="Yakeen-lagends-practice-test-1-solution.pdf" onclick="return requireJoin(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+  
+    <div class="card" data-cat="neet physics solution">
+      <h3>Practice Test 2 – NEET</h3>
+      <a class="btn" onclick="previewPDF('practice-test-2.pdf')">Preview</a>
+      <a class="btn" href="practice-test-2.pdf" onclick="return requireJoin(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+    
+    <div class="card" data-cat="neet physics solution">
+      <h3>Practice Test 2 – NEET (Solution & Hint)</h3>
+      <a class="btn" onclick="previewPDF('practice-test-2-solutions.pdf')">Preview</a>
+      <a class="btn" href="practice-test-2-solutions.pdf" onclick="return requireJoin(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
+    
+    <div class="card" data-cat="neet physics solution">
+      <h3>Rank Booster Test 1- NEET</h3>
+      <a class="btn" onclick="previewPDF('rank-booster-test-1.pdf')">Preview</a>
+      <a class="btn" href="rank-booster-test-1.pdf" onclick="return requireJoin(this.href)">Download</a>
+      <div class="counter">Downloads: <span>0</span></div>
+    </div>
   </div>
 </div>
 
@@ -283,10 +288,8 @@ footer a:hover {
 <section id="contact" class="section-contact">
   <div class="container">
     <h2>Contact Us</h2>
-    <div class="contact-lines">
-      <p><a href="mailto:piraaq36@gmail.com">piraaq36@gmail.com</a></p>
-      <p><a href="https://wa.me/919596027454" target="_blank">+91 9596027454</a></p>
-    </div>
+    <p>Email: <a href="mailto:piraaqib36@gmail.com">piraaqib36@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919596027454" target="_blank">+91 9596027454</a></p>
   </div>
 </section>
 
