@@ -169,38 +169,57 @@ footer a:hover {
   color: #2563eb;
 }
 
-/* Compact Contact & Privacy Sections */
-.section-contact, .section-privacy {
-  padding: 30px 15px; /* smaller padding */
+/* Compact Privacy Section */
+.section-privacy {
+  padding: 30px 15px;
   border-radius: 15px 15px 0 0;
   margin-top: 15px;
   color: #fff;
   text-align: center;
   backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
 }
 
-.section-contact h2, .section-privacy h2 {
-  font-size: 1.5rem; /* smaller heading */
-  margin-bottom: 10px;
+.section-privacy h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
   font-weight:600;
 }
 
-.section-contact p, .section-privacy p {
-  font-size: 1rem; /* smaller text */
+.section-privacy p {
+  margin:0;
   line-height:1.4;
-  max-width:600px;
-  margin:5px auto;
+  font-size: 1rem;
 }
 
-.section-contact a, .section-privacy a {
-  color:#2563eb;
-  text-decoration:underline;
-  transition: color 0.3s;
+/* Compact Contact Section: background only behind 2 lines */
+.section-contact {
+  padding: 10px 15px;
+  border-radius: 15px 15px 0 0;
+  margin-top: 15px;
+  color: #fff;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, #0f172a, #1e40af);
+  display: inline-block;
 }
 
-.section-contact a:hover, .section-privacy a:hover { 
-  color:#93c5fd; 
+.section-contact .container { padding: 0; }
+
+.section-contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight:600;
 }
+
+.section-contact p {
+  margin:0;
+  line-height:1;
+  font-size: 1rem;
+}
+
+.section-contact a { color:#2563eb; text-decoration:underline; transition: color 0.3s; }
+.section-contact a:hover { color:#93c5fd; }
 
 /* Responsive */
 @media(max-width:768px){
@@ -287,7 +306,7 @@ footer a:hover {
 <section id="contact" class="section-contact">
   <div class="container">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:piraaqib36@gmail.com">piraaqib36@gmail.com</a></p>
+    <p>Email: <a href="mailto:piraaq36@gmail.com">piraaq36@gmail.com</a></p>
     <p>WhatsApp: <a href="https://wa.me/919596027454" target="_blank">+91 9596027454</a></p>
   </div>
 </section>
