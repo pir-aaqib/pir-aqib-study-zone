@@ -18,9 +18,10 @@ body{
   color:#fff;
   transition:.3s;
   padding-top:0;
+  scroll-padding-bottom: 100px; /* space for back-to-top button */
 }
 
-/* Header scrolls naturally */
+/* Header */
 header{
   position: relative;
   text-align: center;
@@ -68,7 +69,7 @@ header{
   transform:translateY(-50%);
   animation:fadeUp 1s;
   padding: 0 15px;
-  font-size:1.4rem; /* Increased size for banner text */
+  font-size:1.4rem;
   font-weight:600;
 }
 
@@ -145,12 +146,69 @@ header{
   justify-content:center;
   font-size:26px;
   box-shadow:0 8px 20px rgba(0,0,0,.4);
+  z-index:9999;
 }
 
 /* Footer */
-footer{text-align:center;padding:20px;opacity:.8;}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(15,23,42,0.7);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 0.9rem;
+}
 
-/* Responsive adjustments */
+footer a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #2563eb;
+}
+
+/* Contact & Privacy Sections */
+.section-contact, .section-privacy {
+  padding: 60px 20px;
+  border-radius: 25px 25px 0 0;
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.section-contact { background: linear-gradient(135deg, #0f172a, #1e40af); }
+.section-privacy { background: linear-gradient(135deg, #1e3a8a, #0f172a); }
+
+.section-contact h2, .section-privacy h2 { font-size: 2rem; margin-bottom: 15px; font-weight:700; }
+.section-contact p, .section-privacy p { font-size: 1.1rem; line-height:1.6; max-width:700px; margin:10px auto; }
+.section-contact a, .section-privacy a { color:#2563eb; text-decoration:underline; transition: color 0.3s; }
+.section-contact a:hover, .section-privacy a:hover { color:#93c5fd; }
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: none;
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 9999;
+}
+
+#backToTop:hover { transform: translateY(-5px) scale(1.1); opacity:0.9; }
+
+/* Responsive */
 @media(max-width:768px){
   .carousel { min-height:140px; max-height:250px; }
   .slide-content { font-size:1.2rem; }
@@ -164,7 +222,6 @@ footer{text-align:center;padding:20px;opacity:.8;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -211,27 +268,56 @@ footer{text-align:center;padding:20px;opacity:.8;}
   
     <div class="card" data-cat="neet physics solution">
       <h3>Practice Test 2 – NEET</h3>
-      <a class="btn" onclick="practice-test-2.pdf">Preview</a>
+      <a class="btn" onclick="previewPDF('practice-test-2.pdf')">Preview</a>
       <a class="btn" href="practice-test-2.pdf" onclick="return requireJoin(this.href)">Download</a>
       <div class="counter">Downloads: <span>0</span></div>
     </div>
     
     <div class="card" data-cat="neet physics solution">
       <h3>Practice Test 2 – NEET (Solution & Hint)</h3>
-      <a class="btn" onclick="practice-test-2-solutions.pdf">Preview</a>
+      <a class="btn" onclick="previewPDF('practice-test-2-solutions.pdf')">Preview</a>
       <a class="btn" href="practice-test-2-solutions.pdf" onclick="return requireJoin(this.href)">Download</a>
       <div class="counter">Downloads: <span>0</span></div>
     </div>
     
     <div class="card" data-cat="neet physics solution">
       <h3>Rank Booster Test 1- NEET</h3>
-      <a class="btn" onclick="rank-booster-test-1.pdf">Preview</a>
+      <a class="btn" onclick="previewPDF('rank-booster-test-1.pdf')">Preview</a>
       <a class="btn" href="rank-booster-test-1.pdf" onclick="return requireJoin(this.href)">Download</a>
       <div class="counter">Downloads: <span>0</span></div>
     </div>
-    
-<footer>© 2026 Pir Aaqib Study Zone | About | Contact | Privacy</footer>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<section id="contact" class="section-contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:pir.aaqib@example.com">pir.aaqib@example.com</a></p>
+    <p>Phone / WhatsApp: <a href="https://wa.me/919596027454" target="_blank">+91 9596027454</a></p>
+  </div>
+</section>
+
+<!-- Privacy Section -->
+<section id="privacy" class="section-privacy">
+  <div class="container">
+    <h2>Privacy Policy</h2>
+    <p>Your privacy is important to us. We never share your personal data with third parties. Downloads, searches, and visits are anonymous unless you contact us directly.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Pir Aaqib Study Zone | 
+  <a href="#contact">Contact</a> | 
+  <a href="#privacy">Privacy</a>
+</footer>
+
+<!-- WhatsApp -->
 <a href="https://wa.me/919596027454" class="whatsapp">💬</a>
+
+<!-- Back to Top -->
+<a href="#" id="backToTop" title="Back to Top">⬆️</a>
 
 <!-- PDF Preview Modal -->
 <div id="previewModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;">
@@ -310,6 +396,17 @@ function sortByDownloads(){
   });
   cards.forEach(c=>container.appendChild(c));
 }
+
+// Back to Top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) backToTop.style.display='block';
+  else backToTop.style.display='none';
+});
+backToTop.addEventListener('click', (e)=>{
+  e.preventDefault();
+  window.scrollTo({ top:0, behavior:'smooth' });
+});
 </script>
 
 </body>
